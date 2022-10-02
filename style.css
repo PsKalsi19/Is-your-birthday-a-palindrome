@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --body-color: #fff7ed;
+  --primary-color: #f59e0b;
+  --dark-gray: #9ca3af;
+  --light-gray: #f3f4f6;
+  --white: #fafafa;
+  --error: #ef4444;
+}
+/* For typography */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+  background-color: var(--body-color);
+}
+/* For Containers */
+
+hr {
+  margin: 2rem 0;
+}
+.container {
+  padding: 0 1rem;
+}
+
+.container-center {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* For hero */
+.hero {
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero .hero-heading {
+  color: var(--primary-color);
+}
+
+.hero-subheading {
+  color: var(--dark-gray);
+}
+
+.hero .hero-img {
+  width: 260px;
+}
+
+/* For Links */
+.link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  cursor: pointer;
+}
+/* for sections */
+.section {
+  padding: 2rem;
+}
+
+.section h3,
+.section h1 {
+  text-align: center;
+}
+.section-off-white {
+  background-color: var(--light-gray);
+}
+
+.section-error {
+  display: none;
+  color: var(--error);
+  text-align: center;
+}
+.section-status {
+  display: none;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Forms related */
+/* labels */
+.label {
+  color: var(--dark-gray);
+}
+
+.date-wrapper,
+.number-wrapper {
+  text-align: center;
+  margin: 1rem 2rem;
+}
+
+.input-field {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  width: 10rem;
+  border: 1px solid var(--primary-color);
+}
+
+textarea {
+  /* display: none; */
+  text-align: center;
+  font-size: larger;
+  font: 400;
+  width: 20vw;
+  height: 5vh;
+  resize: none;
+  border: 1px solid var(--primary-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--body-color);
+}
+/* For button alignment */
+
+.button-wrapper {
+  text-align: center;
+}
+
+/* For Lists */
+.list-non-bullet {
+  list-style: none;
+}
+
+.list-item-inline {
+  display: inline;
+  padding: 0rem 0.5rem;
+}
+
+.unordered-list.list-non-bullet {
+  padding-inline-start: 0px;
+}
+
+/* For nav */
+.navigation {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem;
+}
+
+.navigation > .nav-brand {
+  font-weight: bolder;
+}
+
+.navigation .link {
+  color: var(--white);
+}
+
+.nav-pills {
+  text-align: end;
+}
+
+.navigation .link-active {
+  font-weight: bold;
+}
+/* For output */
+.output-container,
+.output-note {
+  text-align: center;
+}
+
+.output-container {
+  margin: 2rem;
+  position: relative;
+}
+.output {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: large;
+}
+
+/* for footer */
+
+.footer {
+  padding: 2rem 1rem;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+.footer .link {
+  color: var(--white);
+}
+
+.footer ul {
+  padding-inline-start: 0px;
+}
+
+.footer .footer-header {
+  font-size: large;
+  font-weight: bold;
+}
+
+
+.loader {
+  border: 4px solid #e0e0e0d3; /* Light grey */
+  border-top: 4px solid var(--dark-gray); /* Blue */
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  display: inline-flex;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

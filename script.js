@@ -4,23 +4,26 @@ const submitBtn = document.querySelector('#submit-button');
 const result = document.querySelector('#result');
 const outputContainer = document.querySelector('.output-container');
 const monthlyDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
+const loader = document.querySelector('.loader');
+const submitBtnText = document.querySelector('.btn-text');
 submitBtn.addEventListener('click', verifyData)
 
 function verifyData() {
- if (verifyDOB(dob.value)) {
+  if (verifyDOB(dob.value)) {
+    showProcessing()
     const finalDate = getDateObj(dob.value);
     let palindrome = checkPalindromeForAllFormats(finalDate);
     if (palindrome) {
-      setOutput(`Yay, your birthday is palindrome 🎉`);
+      setTimeout(setOutput, 3000, `Yay, your birthday is palindrome 🎉`);
     }
     else {
       const nextDateMessage = renderMessageForNext(calculateNextPalindrome(finalDate));
       const previousDateMessage = renderMessageForPrevious(calculatePreviousPalindrome(finalDate));
-      const notAPalindromeMessage = `Sorry, your birthday is not a palindrome 😪`
-      setOutput(`${notAPalindromeMessage}. 
+      const notAPalindromeMessage = `Sorry, your birthday is not a palindrome 😪`;
+      setTimeout(setOutput, 3000, `${notAPalindromeMessage}. 
       ${nextDateMessage}. 
-      ${previousDateMessage}. `)
+      ${previousDateMessage}. `);
+
     }
   }
 }
@@ -214,12 +217,12 @@ function verifyDOB(dateOfBirth) {
     setError('Date of birth is necessary to Proceed. 😤');
     return false
   }
-  const today = new Date().setHours(0, 0, 0, 0);
-  const selectedDate = new Date(dateOfBirth).setHours(0, 0, 0, 0);
-  if (selectedDate > today) {
-    setError('Date of Birth is not valid.')
-    return false;
-  }
+  // const today = new Date().setHours(0, 0, 0, 0);
+  // const selectedDate = new Date(dateOfBirth).setHours(0, 0, 0, 0);
+  // if (selectedDate > today) {
+  //   setError('Date of Birth is not valid.')
+  //   return false;
+  // }
   hideError()
   return true;
 }
@@ -227,7 +230,8 @@ function verifyDOB(dateOfBirth) {
 function setError(errMessage) {
   errorContainer.innerText = errMessage;
   errorContainer.style.display = 'block';
-  result.value = ''
+  hideProcessing();
+  hideOutput();
 }
 
 function hideError() {
@@ -238,4 +242,21 @@ function setOutput(message) {
   outputContainer.style.display = 'block'
   result.innerText = message;
   hideError()
+  hideProcessing()
+}
+
+function hideOutput() {
+  outputContainer.style.display = 'block'
+  result.value = ''
+}
+function showProcessing() {
+  submitBtnText.innerText = 'Processing...'
+  submitBtn.setAttribute('disabled', true);
+  loader.style.display = 'inline-flex'
+}
+
+function hideProcessing() {
+  submitBtnText.innerText = 'Submit'
+  submitBtn.removeAttribute('disabled');
+  loader.style.display = 'none'
 }

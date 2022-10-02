@@ -202,16 +202,21 @@ textarea {
 
 
 .loader {
-  border: 4px solid #e0e0e0d3; /* Light grey */
+  border: 4px solid var(--white); /* Light grey */
   border-top: 4px solid var(--dark-gray); /* Blue */
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  display: inline-flex;
+  margin: 4px 4px 0 0;
+  display: none;
   animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.btn-text{
+  font-size: large;
 }

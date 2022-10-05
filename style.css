@@ -3,6 +3,7 @@
 :root {
   --body-color: #fff7ed;
   --primary-color: #f59e0b;
+  --secondary-color: #ffedd5;
   --dark-gray: #9ca3af;
   --light-gray: #f3f4f6;
   --white: #fafafa;
@@ -145,8 +146,8 @@ textarea {
 /* For nav */
 .navigation {
   background-color: var(--primary-color);
-  color: var(--white);
-  padding: 1rem;
+  color: var(--secondary-color);
+  padding: 1rem 4rem;
 }
 
 .navigation > .nav-brand {
@@ -154,7 +155,7 @@ textarea {
 }
 
 .navigation .link {
-  color: var(--white);
+  color:var(--secondary-color);
 }
 
 .nav-pills {
@@ -198,6 +199,7 @@ textarea {
 .footer .footer-header {
   font-size: large;
   font-weight: bold;
+  color: var(--secondary-color);
 }
 
 
@@ -219,4 +221,15 @@ textarea {
 
 .btn-text{
   font-size: large;
+}
+
+/* for icons */
+.lni {
+  font-size: larger;
+  color: var(--icon-color);
+}
+
+.footer .lni {
+  font-size: x-large;
+  color: var(--icon-color);
 }
